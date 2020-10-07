@@ -4,8 +4,6 @@ MAINTAINER Nate Mellendorf "nate.mellendorf@gmail.com"
 ARG SECRET
 ENV SECRET $SECRET
 
-RUN echo ${SECRET}
-
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo "root:${SECRET}" | chpasswd
